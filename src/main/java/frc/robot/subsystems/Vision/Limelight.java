@@ -19,6 +19,7 @@ import frc.robot.subsystems.Vision.LimelightHelpers;
 
 public class Limelight extends SubsystemBase {
   private NetworkTable table;
+  private NetworkTable tX;
 
   
   /** Creates a new Limelight. */
@@ -48,9 +49,22 @@ public class Limelight extends SubsystemBase {
       return true;
     } else if (DriverStation.getAlliance().get() == Alliance.Red && LimelightHelpers.getFiducialID("") == 3) {
       return true;
-    } else {
+    } else if (DriverStation.getAlliance().get() != Alliance.Blue && DriverStation.getAlliance().get() != Alliance.Red) {
+      if (LimelightHelpers.getFiducialID("eight") == 8) {
+        while (LimelightHelpers.getTX("") != 0) {
+
+        }
+        while (LimelightHelpers.getTY("") != 0) {
+
+        }
+
+        return true;
+      }
+    }
+    else {
       return false;
     }
+    return false;
   }
 
   @Override
