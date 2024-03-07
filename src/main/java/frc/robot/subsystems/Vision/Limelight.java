@@ -20,6 +20,7 @@ import frc.robot.subsystems.Vision.LimelightHelpers;
 public class Limelight extends SubsystemBase {
   private NetworkTable table;
   private NetworkTable tX;
+  private NetworkTable tY;
 
   
   /** Creates a new Limelight. */
